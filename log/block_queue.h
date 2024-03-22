@@ -1,3 +1,8 @@
+/**
+ * 使用循环数组模拟队列
+*/
+
+
 #ifndef BLOCK_QUEUE_H
 #define BLOCK_QUEUE_H
 
@@ -113,6 +118,7 @@ class block_queue {
         mutex_.lock();
 
         while (size_ <= 0) {
+            //当重新抢到互斥锁，pthread_cond_wait返回为0
             if (!cond_.wait(mutex_.get())) {
                 mutex_.unlock();
                 return false;
