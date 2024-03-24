@@ -1,16 +1,18 @@
 {
     "configurations": [
         {
-            "name": "Mac",
+            "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",    // 将本地工作目录添加到include路径中，
+                                            // 这样本地的所有头文件都可以被VSCode索引，这样编辑就不会触发红色的波浪线；
+                "/usr/include/**"           // 将Linux下的引用路径添加到include路径中，
+                                            // 对于一些第三方依赖库，如Boost的头文件，就能被VSCode索引
             ],
             "defines": [],
-            "macFrameworkPath": [
-                "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
-            ],
-            "compilerPath": "/usr/bin/clang",
-            "intelliSenseMode": "macos-clang-arm64"
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64"
         }
     ],
     "version": 4

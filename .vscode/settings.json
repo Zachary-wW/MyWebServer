@@ -1,12 +1,9 @@
 {
     "files.associations": {
-        "ostream": "cpp",
-        "list": "cpp",
-        "__split_buffer": "cpp",
-        "array": "cpp",
+        "exception": "cpp",
+        "*.tcc": "cpp",
         "string": "cpp",
-        "string_view": "cpp",
+        "deque": "cpp",
         "vector": "cpp"
-    },
-    "C_Cpp.errorSquiggles": "enabled"
+    }
 }
